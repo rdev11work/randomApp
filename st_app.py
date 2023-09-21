@@ -13,7 +13,7 @@ def generate_response(input_text):
     model_inputs = tokenizer(input_text, return_tensors="pt")
     outputs = model.generate(**model_inputs, max_length=512)
     output_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
-    st.info(llm(input_text))
+    st.info(output_text)
 
 with st.form('my_form'):
     text = st.text_area('Enter text:', 'What are the three key pieces of advice for learning how to code?')
